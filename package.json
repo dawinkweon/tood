@@ -1,0 +1,15 @@
+{
+  "name": "tood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dawin.kweon",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "winston": "^3.13.0"
+  }
+}

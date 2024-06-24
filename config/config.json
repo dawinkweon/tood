@@ -1,0 +1,7 @@
+{
+  "featureFlags": {
+    "forceCleanDataSlate": false
+  },
+  "dataFilePath": "./data/data.json",
+  "configFilePath": "./config/config.json"
+}
