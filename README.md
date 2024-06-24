@@ -1,5 +1,7 @@
 # tood
 
+A yagni todo app spelled badly but written to meet requirements of [todo-app](https://gist.github.com/CheeseStick/2009ecac9973617a619b7d1a9642ce30)
+
 ## Local Development
 
 ```
