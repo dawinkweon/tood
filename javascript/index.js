@@ -1,19 +1,10 @@
 const { program } = require("commander");
 const fs = require("fs");
 const path = require("path");
-const winston = require("winston");
+const { logger } = require("./src/logger");
 
 const CONFIG_FILE_PATH = "./config/config.json";
 const INITIAL_DATA = { toods: [] };
-
-const logger = winston.createLogger({
-  format: winston.format.combine(
-    winston.format.splat(),
-    winston.format.simple()
-  ),
-  transports: [new winston.transports.Console()],
-});
-logger.level = "info";
 
 let config = undefined;
 let data = undefined;
@@ -56,9 +47,9 @@ const generateNewId = () => {
     return 0;
   }
 
-  const ids = data.toods.map(tood => tood.id);
+  const ids = data.toods.map((tood) => tood.id);
   return Math.max(...ids) + 1;
-}
+};
 
 const addTood = (toodName) => {
   const tood = { id: generateNewId(), name: toodName, status: "TODO" };
@@ -83,7 +74,7 @@ const saveData = (data) => {
 
 const prettyPrintJson = (json) => {
   return JSON.stringify(json, null, 2);
-}
+};
 
 const listToods = () => {
   const toods = [...data.toods];
@@ -97,10 +88,10 @@ const listToods = () => {
 const removeToodById = (id) => {
   const updatedData = {
     ...data,
-    toods: [...data.toods.filter(tood => tood.id !== id)],
+    toods: [...data.toods.filter((tood) => tood.id !== id)],
   };
   saveData(updatedData);
-}
+};
 
 const initialize = () => {
   loadConfig();
